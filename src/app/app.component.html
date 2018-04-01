@@ -1,0 +1,27 @@
+
+<div  class="content" scrollable (scrollPosition)="scrollHandler($event)">
+   
+   
+  
+  <div  *ngFor="let car of page.data | async">
+
+      <div style="height:1px;border-bottom:1px solid #b495b4;width:49vw;display:inline-block;"></div>
+    <!--   <div style="height:140px;border-left: 6px solid green;width:1vw;"></div> -->
+
+      
+ <!--    <div style="border-left: 1px  solid  rgb(117, 117, 126);"> -->
+    <h1>Built in {{ car.year }}</h1>
+    <img style="width:350px;height:180px;" [src]="car.img">
+    <!--  </div> -->
+    
+  </div>
+<div class="loadImage">
+  <loading-spinner  *ngIf="page.loading | async"></loading-spinner>
+
+</div>
+  <p class="tag is-warning" style="margin-top:180px;"  *ngIf="page.done | async">finished!</p>
+</div>
+
+
+
+<router-outlet></router-outlet>
