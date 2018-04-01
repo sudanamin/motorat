@@ -19,7 +19,7 @@ export class ScrollableDirective {
       const offset = this.el.nativeElement.offsetHeight
 
 
-      if (top > height - offset - 1) {
+      if (top+150 > height - offset - 1) {
         this.scrollPosition.emit('bottom')
       }
 
